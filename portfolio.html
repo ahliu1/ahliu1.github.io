@@ -4,10 +4,11 @@
         <title>Amy's Magical Website</title>
         <style type="text/css">
             body {
-                background: rgb(255, 255, 255);
+                background: rgb(248, 198, 198);
                 color: rgb(45, 45, 45);
                 padding: 10px;
                 font-family: monospace;
+                margin: auto;
             }
             header {
                 font-size: 1.5em;
@@ -21,8 +22,9 @@
     
             /* navigation menu */
             nav {
-                background: rgb(248, 198, 198);
+                background: rgb(252, 163, 163);
                 margin: 0 auto;
+                margin-bottom: 20px;
                 display: flex;
                 padding: 10px;
             }
@@ -31,6 +33,7 @@
                 align-items: center;
                 color: rgb(255, 255, 255);
                 flex: 1;
+                margin: 0
             }
             #nav-ul {
                 list-style-image: none;
@@ -82,26 +85,28 @@
     </head>
     <body>
         <div id="all-contents">
-            <nav>
+             <nav>
                 <h1>Amy's Magical Website</h1>
-                <ul id="nav-ul">
+                 <ul id="nav-ul">
                     <li class="nav-li">
                         <a class="nav-a" href="index.html">Home</a>
                     </li>
-                    <li class="nav-li">
-                        <a class="nav-a" href="portfolio.html">Portfolio</a>
+                     <li class="nav-li">
+                         <a class="nav-a" href="portfolio.html">Portfolio</a>
                     </li>
                 </ul>
             </nav>
-                <main>
-                    <div class="content">
-                        <h1>Portfolio</h1>
-                        <ul id="portfolio">
-                            <li><a href="projects/platformer/">Platformer : A cannon - dodging, collectible - grabbing adventure game for Halleb0t</a></li>
-                            <li><a href="projects/bouncing-box/">Bouncing Box : A project that gives you a taste of game development on the web</a></li>
-                            <li><a href="projects/circularity/">Circularity : A motion poem using random number generation and velocity applied to circle shapes...</a></li>
-                        </ul>
-                    </div>
+            <main>
+            <div class="content">
+                <h1>Portfolio</h1>
+                <ul id="portfolio">
+                     <li><a href="projects/platformer/">Platformer : A cannon - dodging, collectible - grabbing adventure game for Halleb0t</a></li>
+                    <li><a href="projects/bouncing-box/">Bouncing Box : A project that gives you a taste of game development on the web </a></li>
+                    <li><a href="projects/circularity/">Circularity : A motion poem using random number generation and velocity applied to circle shapes...</a></li>
+                </ul>
+            </div>
+        </main>
+    </div>
                 </main>
             
         </div>
