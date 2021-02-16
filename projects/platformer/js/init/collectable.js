@@ -38,8 +38,19 @@
         
         // example: 
         createCollectable(type.steve, 200, 170, 6, 0.7);
+        createCollectable(type.db, 500, 450, 5, 0.6);
+        createCollectable(type.grace, 480, 200, 10, 0.8);
+        createCollectable(type.kennedi, 700, 50, 8, 0.5);
+
         
-        
+        // (0, 225); // platform 4
+       // (180, 450, 0.5); //platform 2
+       // (475, 150, 0.8); // platform 5
+       // (700, 600, 0.4, 2); // platform 1a
+      //  (450, 525, 0.5); // platform 1b
+        // (400, 350, 1.2); // platform 3b
+
+
         
         // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
