@@ -8,14 +8,17 @@
 		.box {
 			width: 70px;
 			height: 70px;
-			background-color: teal;
+			background-color: rgb(210, 211, 243);
 			font-size: 300%;
 			text-align: center;
 			display: block;
 			position: absolute;
 			top: 100px;
-			left: 0px;  /* <--- Change me! */
+			left: 20px;  /* <--- Change me! */
 		}
+        body{
+            background-image: url("https://wallpapercave.com/wp/wp5179762.jpg")
+        }
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
@@ -38,10 +41,11 @@
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
 
 			// Every 50 milliseconds, call the update Function (see below)
-			setInterval(update, 50);
+			var interval = setInterval(update, 50);
 			
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
-			box.on('click', handleBoxClick);
+            box.on('click', handleBoxClick);
+            board.on('click', handleMisClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
 			function moveBoxTo(newPositionX) {
@@ -51,14 +55,22 @@
 			// changes the text displayed on the Box
 			function changeBoxText(newText) {
 				box.text(newText);
-			}
+            }
+            
+            function endGame(){
+                clearInterval(interval);
+            }
 
 			//////////////////////////////////////////////////////////////////
 			/////////////////// YOUR CODE BELOW HERE /////////////////////////
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-			
+            
+            var positionX = 0;
+            var points = 0;
+            var speed = 10;
+            var misClick = 0;
 
 			
 			/* 
@@ -67,7 +79,14 @@
 			turn it around! 
 			*/
 			function update() {
-				
+                positionX = positionX + speed;
+                 moveBoxTo(positionX);
+                 if (positionX > boardWidth){
+                     speed = -speed;
+                 } if (positionX < 0){
+                     speed = -speed;
+                 }
+
 
 			};
 
@@ -77,10 +96,24 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
+                positionX = 0;
+                points = points + 1;
+                changeBoxText(points);
+                if (speed > 0){
+                    speed = speed + 3;
+                } if (speed < 0) {
+                    speed = speed - 3;
+                }
 				
 
 
-			};
+            };
+            function handleMisClick() {
+                misClick = misClick + 1
+                if (misClick > 9){
+                    clearInterval(0);
+                }
+            };
 		})();
 	</script>
 </body>
