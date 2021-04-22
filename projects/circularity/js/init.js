@@ -92,7 +92,7 @@ var init = function (window) {
         }
         
         /////////////////////////////////////////////////////////////
-        // --- NO CODE BELOW HERE  --- DO NOT REMOVE THIS CODE --- //
+        // --- NO CODE BELOW HEREs  --- DO NOT REMOVE THIS CODE --- //
         /////////////////////////////////////////////////////////////
         
         view.addChild(fps);
