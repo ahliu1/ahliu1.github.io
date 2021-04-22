@@ -16,8 +16,7 @@
   "license": "CC",
   "ignore": [
     "**/.*",
-    "node_modules",
-    "bower_components",
+
     "test",
     "tests"
   ],
