@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--NOT VISIBLE TO THE USER-->
+<head>
+
+    <meta charset="UTF-8">
+    <title>Catsagram</title>
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./javascript/brains.js"></script>
+    <style>
+        .brand-font{
+            font-style: italic;
+            font-family: sans-serif;
+        }
+        img{
+            width: 300px;
+        }
+        .caption{
+            margin-bottom: 70px;
+        }
+        .pic-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        body{
+            background-color:lavenderblush;
+        }
+    </style>
+
+</head>
+
+<!--VISIBLE TO THE USER-->
+<body>
+
+    <h1 class="brand-font">Catsagram</h1>
+    <h5 class="brand-font">Sharing the World's Cats</h5>
+    <div id="name"></div>
+    <div id="name_last"></div>
+    <div id="followers"></div>
+    <img id="profile_pic">
+    
+    <!-- PICTURE CONTAINER  --> 
+    <div class="pic-container">
+        <!--Cat Photo 1-->
+        <img src="https://i.pinimg.com/originals/f8/55/99/f855995c52c5642d8286a870dd913129.jpg">
+        <div id="likeCount1"></div>
+        <button id="likeBtn" onClick="likePhoto(1)">Like</button>
+        <p class="caption">rilakitty</p>
+
+        <!--Cat Photo 2--> 
+        <img src="https://i.pinimg.com/originals/b7/38/5a/b7385a8b38683e76e81e8f7edb9912a9.jpg">
+        <div id="likeCount2"></div>
+        <button id="likeBtn" onClick="likePhoto(2)">Like</button>
+        <p class="caption">hi there</p>
+
+        <!--Cat Photo 3--> 
+        <img src="https://i.pinimg.com/originals/3b/d8/7f/3bd87f99af0f6a06d1591e2348b8e466.png">
+        <div id="likeCount3"></div>
+        <button id="likeBtn" onClick="likePhoto(3)">Like</button>
+        <p class="caption">loaf</p>
+
+        <!--Cat Photo 4-->
+        <img src="https://i.pinimg.com/736x/5d/d6/10/5dd6106d1e9d24295f5c84590afed12f.jpg">
+        <div id="likeCount4"></div>
+        <button id="likeBtn" onClick="likePhoto(4)">Like</button>
+        <p class="caption">why does life happen so much</p>
+
+        <!--Cat Photo 5-->
+        <img src="https://i.pinimg.com/originals/e0/fb/dd/e0fbdd10802dec8d81f83f6b0f605bb2.png">
+        <div id="likeCount5"></div>
+        <button id="likeBtn" onClick = "likePhoto(5)">Like</button>
+        <p class="caption">happy mother's day</p>
+    </div>
+
+</body>
+
+</html>
