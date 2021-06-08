@@ -103,13 +103,13 @@ function runProgram(){
           speedY = 5;
       }
 
-      if (event.which === KEY.A-LEFT){
+      if (event.which === KEY["A-LEFT"]){
           speedX2 = -5;
-      } else if (event.which === KEY.W-UP){
+      } else if (event.which === KEY["W-UP"]){
           speedY2 = -5;
-      } else if (event.which === KEY.D-RIGHT){
+      } else if (event.which === KEY["D-RIGHT"]){
           speedX2 = 5;
-      } else if (event.which === KEY.S-DOWN){
+      } else if (event.which === KEY["S-DOWN"]){
           speedY2 = 5;
       }
   }
@@ -133,11 +133,11 @@ function runProgram(){
 
       if (event.which === KEY["A-LEFT"]){
           speedX2 = 0;
-      } else if (event.which === KEY.W-UP){
+      } else if (event.which === KEY["W-UP"]){
           speedY2 = 0;
-      } else if (event.which === KEY.S-RIGHT){
+      } else if (event.which === KEY["D-RIGHT"]){
           speedX2 = 0;
-      } else if (event.which === KEY.S-DOWN){
+      } else if (event.which === KEY["S-DOWN"]){
           speedY2 = 0;
       }
   }
