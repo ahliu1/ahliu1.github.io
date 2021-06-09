@@ -1,0 +1,127 @@
+Pong Planning:
+
+User Story / Gameplay -
+
+Describe the Gameplay: 
+- There are two players controlling two paddles positioned on 
+opposite sides (left and right). These players may move vertically 
+via up/down arrow keys and W/S keys but not horizontally. 
+- The ball begins its starting position at the dotted line 
+in the center of the screen, bouncing to the right side during the first
+round. 
+- The ball is hit back and forth between the two paddles, bouncing off the
+paddles as well as the top and bottom walls. 
+- When the player misses the ball and it hits their wall, the other player
+gains a point. 
+- The ball then returns to its starting position after the first round and 
+bounces to the left side. The game resumes as described above. 
+- The game will end when one of the players reaches 11 points. 
+
+What are the conditions when the game begins?
+- The game starts with both players having 0 points. The two players are
+positioned at opposite sides (left and right). They start in the vertical 
+middle. 
+- The ball bounces from the dotted line in the very middle of the screen
+to the right player. 
+
+Does the game have an end? If so, what are the conditions for when it ends?
+- The game ends when one player reaches 11 points - maybe using a conditional
+with if (playerPoints === 11)?
+
+What ifs will there be?
+- To end the game: if (leftPlayerScore === 11) {
+        endGame();
+    } else if (rightPlayerScore === 11){
+        endGame();
+    }
+- To tally the points: 
+    - if the ball hits left wall, add 1 point for right player:
+    if (ballPositionX < 0){
+        rightPlayerScore ++;
+    }
+    - if the ball hits right wall, add 1 point for left player:
+    if (ballPositionX > boardWidth){
+        leftPlayerScore ++;
+    }
+- To register the up and down arrow keys' keydown motions
+    - if (event.which === KEY.UP){
+        paddleSpeed = -5;
+    } else if (event.which === KEY.DOWN){
+        paddleSpeed = 5;
+    } // need to do this for both paddles - use W and D arrow keys for leftPlayer
+
+- To register the up and down arrow keys' keyup motions
+    - if (event.which === KEY.UP){
+        paddleSpeed = -5;
+    } else if (event.which === KEY.DOWN){
+        paddleSpeed = 5;
+    } // need to do this for both paddles - use W and D arrow keys for leftPlayer
+
+- To bounce off top/bottom walls 
+    - if (ballPositionY > boardHeight){
+        ballSpeedY = -ballSpeedX;
+    } else if (ballPositionY < 0){
+        ballSpeedY = -ballSpeedY;
+    }
+
+- To bounce off paddles when coming into contact
+    - 
+Visual Game Components:
+
+What are the visual game components? 
+- Background
+- Dotted line down the middle
+- One paddle on each wall (left and right, 2 in total)
+- Ball 
+
+Which will be static? 
+- The background and dotted line will be static
+
+Which will be animated? 
+- The paddles and the ball will be animated
+
+What data will you need to manage each game component? 
+For example, in Bouncing Box, the data values were positionX, speedX, and points.
+- leftPaddlePosition - to move up and down // don't need to differentiate
+between x and y because they can only move in one direction (up/down)
+- rightPaddlePosition - same logic as above
+- leftPaddleSpeed - to respond to keyup/keydown motions // don't need to 
+differentiate between x and y because they can only move in one direction 
+(up/down)
+- rightPaddleSpeed - same logic as above
+- leftPlayerScore and rightPlayerScore - track players' scores, could display
+on top of left/right background for user convenience?
+- ballSpeedX - ball needs to reverse direction when coming in contact with 
+paddle
+- ballSpeedY - ball needs to reverse direction when coming in contact with
+top/bottom walls
+
+Events/Logic:
+
+What events will occur in this game? 
+(timer events, keyboard events, clicking events?)
+- Keyboard events (registering the up and down arrow keys)
+    - $(document).on('keydown', handleKeyDown);                          
+    - $(document).on('keyup', handleKeyUp);
+    - use our conditionals from earlier to plug into the functions to
+    move the paddles
+
+How do those events affect the data of the program?
+- These events help us register the users' keyboard clicks (up and down 
+arrows), thus allowing them to move the paddles and allow the game to
+function. 
+
+For each "event", write out the high-level logic of what will happen.
+- $(document).on('keydown', handleKeyDown);
+When the up/down arrow keys or W/S keys are pushed, 
+    1. Paddle is able to move vertically with the paddlePosition and
+    paddleSpeed features
+    2. Paddle is able to come into contact with ball
+    3. Ball is able to bounce off paddle and the game may resume OR the paddle misses and hits the wall, 
+    and the other player gets a point- ball set back to middle of board and round restarts
+When the up/down arrow keys or W/S keys are released,
+    1. Paddle stops motion in current position
+    2. Ball is able to bounce off paddle and the game may resume OR the paddle misses and hits the wall, 
+    and the other player gets a point- ball set back to middle of board and round restarts
+
+
