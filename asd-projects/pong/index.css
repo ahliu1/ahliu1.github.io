@@ -3,6 +3,24 @@ body {
   background-color: rgb(196, 255, 216);
 }
 
+#alert {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-size: 40px;
+    position: absolute;
+    top: 500px;
+    left: 450px;
+}
+
+#endingScreen{
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-size: 40px;
+    position: absolute;
+    top: 500px;
+    left: 450px;
+}
+
 #board {
   width: 1425px;
   height: 675px;
@@ -73,6 +91,7 @@ body {
     top: 5px;
     left: 1040px;
 }
+
 /*   left: 100px; */  /* Uncomment if you want to set a "starting" position */
 /*   top: 100px;  */  /* Uncomment if you want to set a "starting" position */
 
