@@ -1,12 +1,18 @@
 // set the square size (must match the CSS)
+//change this if you want to change the size of the image. Note that you will 
+// also need to change the corresponding CSS for the .square class's 
+// width and height properties.
 const SQUARE_SIZE = 20;
 
 // set constants for the indexes of R, G, and B values
+// use for index values when creating filters
 const RED = 0;
 const GREEN = 1;
 const BLUE = 2;
 
 // the image data
+//refer to the array storing the image data. 
+// Note that it contains only "rgb strings".
 const image = [
     ["rgb(150, 150, 150)", "rgb(150, 150, 150)", "rgb(150, 150, 150)", "rgb(150, 150, 150)", "rgb(150, 150, 150)", "rgb(150, 150, 150)", "rgb(150, 150, 150)", "rgb(150, 150, 150)", "rgb(150, 150, 150)", "rgb(150, 150, 150)", "rgb(150, 150, 150)", "rgb(150, 150, 150)", "rgb(150, 150, 150)", "rgb(150, 150, 150)"],
     ["rgb(150, 150, 150)", "rgb(150, 150, 150)", "rgb(150, 150, 150)", "rgb(150, 150, 150)", "rgb(50, 200, 50)",   "rgb(50, 200, 50)",   "rgb(50, 200, 50)",   "rgb(50, 200, 50)",   "rgb(50, 200, 50)",   "rgb(150, 150, 150)", "rgb(150, 150, 150)", "rgb(150, 150, 150)", "rgb(150, 150, 150)", "rgb(150, 150, 150)"], 
@@ -56,6 +62,7 @@ function rgbStringToArray(rgbStr) {
 }
 
 // this function converts an array into an RGB string
+//You will need to convert your filtered data back into a string for it to apply.
 function rgbArrayToString(rgbArray) {
     return "rgb("+rgbArray[RED]+","+rgbArray[GREEN]+","+rgbArray[BLUE]+")"
 }
