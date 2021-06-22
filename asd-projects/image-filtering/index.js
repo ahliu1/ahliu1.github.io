@@ -16,15 +16,18 @@ $(document).ready(function(){
 /////////////////////////////////////////////////////////
 
 // TODO 1 & 3: Create the applyFilter function here
-
+/*/ general function that applies filter to the image using
+filter functions in parameter below
+/*/
 function applyFilter(filterFunction){
-    for (var i = 0; i < image.length; i++){
+    for (var i = 0; i < image.length; i++){ 
         for (var j = 0; j < image[i].length; j++){
+            //nested loop to loop and apply over pixels
             var rgbString = image[i][j];
             var rgbNumbers = rgbStringToArray(rgbString);
             filterFunction(rgbNumbers);
             rgbString = rgbArrayToString(rgbNumbers);
-            image[i][j] = rgbString;
+            image[i][j] = rgbString; // stores string back into image array
         }
     };
 }
@@ -32,17 +35,20 @@ function applyFilter(filterFunction){
 // TODO 5: Create the applyFilterNoBackground function
 
 function applyFilterNoBackground(filterFunction){
+    //applies filter to all pixels except the bg gray pixels
     for (var i = 0; i < image.length; i++){
         for (var j = 0; j < image[i].length; j++){
             var rgbString = image[i][j];
             var rgbNumbers = rgbStringToArray(rgbString);
-            var bgColor = 150;
+            var bgColor = 150; // bg color gray
+            // maintains bg color for bg pixels
             if (rgbNumbers[BLUE] === bgColor &&
                 rgbNumbers[RED] === bgColor &&
                 rgbNumbers[GREEN] === bgColor) {
                     rgbString = rgbArrayToString(rgbNumbers);
                     image[i][j] = rgbString;
              } else {
+                 // applies filter for non-bg pixels
                 filterFunction(rgbNumbers);
                 rgbString = rgbArrayToString(rgbNumbers);
                 image[i][j] = rgbString;
@@ -53,17 +59,17 @@ function applyFilterNoBackground(filterFunction){
 
 // TODO 2 & 4: Create filter functions
  function reddify(array){
-     array[RED] = 255;
- }
+     array[RED] = 255; // sets red value to max
+ } 
 
  function decreaseBlue(array){
-     array[BLUE] = array[BLUE] - 30;
-     array[BLUE] = Math.max(array[BLUE], 0);
+     array[BLUE] = array[BLUE] - 30; // subtracts at least 30 from the blue value
+     array[BLUE] = Math.max(array[BLUE], 0); // ensures blue value does not go below 0, uses larger value
  }
 
  function increaseGreenByBlue(array){
-     array[GREEN] = array[GREEN] + array[BLUE];
-     array[GREEN] = Math.min(array[GREEN], 255);
-    }
+     array[GREEN] = array[GREEN] + array[BLUE]; // increases green value by blue value
+     array[GREEN] = Math.min(array[GREEN], 255); // ensures green value does not exceed 225, uses smaller value
+}
 
 // CHALLENGE code goes below here
