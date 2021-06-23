@@ -40,11 +40,12 @@ function applyFilterNoBackground(filterFunction){
         for (var j = 0; j < image[i].length; j++){
             var rgbString = image[i][j];
             var rgbNumbers = rgbStringToArray(rgbString);
-            var bgColor = 150; // bg color gray
+            var bgColor = image[1][1] // bg color gray
+            var bgColorNum = rgbStringToArray(bgColor);
             // maintains bg color for bg pixels
-            if (rgbNumbers[BLUE] === bgColor &&
-                rgbNumbers[RED] === bgColor &&
-                rgbNumbers[GREEN] === bgColor) {
+            if (rgbNumbers[BLUE] === bgColorNum[BLUE] &&
+                rgbNumbers[RED] === bgColorNum[RED] &&
+                rgbNumbers[GREEN] === bgColorNum[GREEN]) {
                     rgbString = rgbArrayToString(rgbNumbers);
                     image[i][j] = rgbString;
              } else {
