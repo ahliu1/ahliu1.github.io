@@ -5,14 +5,14 @@
 /////////////////////////////////////////////////
 // THE CONSTANTS BELOW MAY BE ALTERED FOR EXPERIMENTATION PURPOSES
 
-// set the delay between each sort step
-const SLEEP_AMOUNT = 500;
+// set the delay between each sort step; the lower the value, the faster the sort
+const SLEEP_AMOUNT = 5;
 
-// set the max number of squares
-const MAX_SQUARES = 16;
+// set the max number of squares, number of rows that need to be sorted
+const MAX_SQUARES = 500;
 
-// set constants for pseudo-random number generation
-const SEED = 2;
+// set constants for pseudo-random number generation for randomized order of rows
+const SEED = 2; 
 const FACTOR = 1774339;
 const INCREASE = 7181930;
 

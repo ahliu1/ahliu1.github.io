@@ -15,15 +15,63 @@ The CSS ids you will work with are:
 
 // TODO 2: Implement bubbleSort
 
+// sorts all elements of the provided array from smallest to largest
+async function bubbleSort(array){ // async makes function compatible with sleep function
+    for (i = 0; i < array.length; i++){ 
+        for (j = i + 1; j < array.length; j++){
+            if (array[i].value > array[j].value){ // checks if element with lower index is greater than element with higher index 
+                swap(array, i, j);
+                updateCounter(bubbleCounter); // updates relevant swap counter
+                await sleep();  // works with sleep function so that the sorting displays step by step
+            }
+        }
+    }
+}
+
+
 
 // TODO 3: Implement quickSort
 
+//sorts all elements of the provided array from smallest to largest
+async function quickSort(array, left, right){ //left = leftmost index, right = rightmost index
+    if (array.length > 1){  // calls partition and quicksort if there are two or more unsorted elements
+        var index = await partition(array, left, right);
+        if (left < index - 1){
+            await quickSort(array, left, index-1);
+        }
+        if (right > index){
+            await quickSort(array, index, right);
+        }
+    }
+}
 
 // TODOs 4 & 5: Implement partition
-
+async function partition(array, left, right){ //async used for compatibility with sleep function
+    var pivot = array[Math.floor((right + left)/2)].value; //determines pivot to decide where other values should go
+    while (left < right){ //changes left and right until left is greater than right
+        while (array[left].value < pivot){ // runs while the left element's property is less than the pivot
+            left = left + 1;
+        }
+        while (array[right].value > pivot){ // runs while the right element's property is greater than the pivot
+            right = right - 1;
+        }
+        if (left < right){ // checks if left is still less than right; if so, call swap function
+            swap(array, left, right);
+            updateCounter(quickCounter); // updates relevant swap counter
+            await sleep(); // works with sleep function so that sorting updates step by step
+        }
+    }
+    return left + 1; //new index for quickSort, subdivides arrays for future calls to quickSort
+}
 
 // TODO 1: Implement swap
-
+// switches two elements of the provided array with indexes i and j
+function swap(array, i, j){
+    var temp = array[i]; // temporary variable to store array[i] in so the function can run
+    array[i] = array[j];
+    array[j] = temp;
+    drawSwap(array, i, j);
+}
 
 ///////////////////////////////////////////////////////////////////////
 /////////////////////// YOUR WORK GOES ABOVE HERE /////////////////////

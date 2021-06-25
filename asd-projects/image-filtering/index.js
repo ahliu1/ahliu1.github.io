@@ -40,8 +40,8 @@ function applyFilterNoBackground(filterFunction){
         for (var j = 0; j < image[i].length; j++){
             var rgbString = image[i][j];
             var rgbNumbers = rgbStringToArray(rgbString);
-            var bgColor = image[1][1] // bg color gray
-            var bgColorNum = rgbStringToArray(bgColor);
+            var bgColorString = image[1][1] // bg color gray
+            var bgColorNum = rgbStringToArray(bgColorString);
             // maintains bg color for bg pixels
             if (rgbNumbers[BLUE] === bgColorNum[BLUE] &&
                 rgbNumbers[RED] === bgColorNum[RED] &&
@@ -74,3 +74,9 @@ function applyFilterNoBackground(filterFunction){
 }
 
 // CHALLENGE code goes below here
+/*/function applySmudgeFilter()
+
+function smudge(){
+
+}
+/*/
