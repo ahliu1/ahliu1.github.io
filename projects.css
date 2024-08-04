@@ -1,0 +1,131 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    background-color: #FFE5DE; /* Light beige background */
+}
+
+.home-screen {
+    height: calc(100vh + 140px);
+    display: flex;
+    flex-direction: column;
+    background-color: #FFE5DE;
+    padding: 0 50px;
+}
+
+.personal {
+    display: flex;
+    align-items: flex-start;
+}
+
+.top {
+    display: flex; /* Make .top a flex container */
+    justify-content: space-between; /* This will push .home to the left and .right to the right */
+    align-items: center; /* This will vertically align .home and .right in the center */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 5px;
+    padding-right: 60px;
+}
+
+.home .home-link {
+    padding-top: 10px;
+    font-family: "Didot", "Didot LT STD";
+    font-size: 28px;
+    color: #EF5A90;
+    text-decoration: none;
+}
+
+.projects {
+    display: flex;
+    align-items: center; /* Center vertically */
+    padding: 20px;
+    margin: 20px;
+}
+
+.text-wrapper {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.big-title {
+    font-size: 70px;
+    font-family: "Didot", "Didot LT STD";
+    color: #EF5A90;
+    margin-bottom: 30px;
+}
+
+.headers {
+    font-size: 30px;
+    font-family: "Didot", "Didot LT STD";
+    color: #EF5A90;
+    margin-top: 50px;
+}
+
+.content {
+    font-size: 15px;
+    font-family: "Didot", "Didot LT STD";
+    color: rgb(0, 0, 0);
+}
+
+.tech-stack {
+    font-size: 18px;
+    font-family: "Didot", "Didot LT STD";
+    color: rgb(220, 11, 88);
+}
+
+.headshot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle {
+    width: 250px; /* Adjust the size as needed */
+    height: 250px; /* Adjust the size as needed */
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+}
+
+footer {
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.right-link {
+    text-decoration: none;
+    color: #EF5A90;
+}
+
+.right {
+    display: flex; /* Make .right a flex container */
+    gap: 20px;
+    font-family: "Didot", "Didot LT STD";
+    font-size: 28px;
+    text-decoration: none;
+    color: #EF5A90;
+}
+
+.content-with-images {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* Add some space between the text and the image */
+}
+
+.text-content {
+    max-width: 600px; /* Adjust this width to make the text narrower */
+}
+
+.image {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Add space between the images */
+}
